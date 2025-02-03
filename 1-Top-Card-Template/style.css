@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+ }
+.card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background: #1c2833;
+    color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+ 
+.card img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: .5s ease-in-out;
+}
+
+.card:hover img {
+    top: 1rem;
+    transform:translate(-50%,-50%) rotateZ(25deg);
+}
+
+.card .description {
+    position: absolute;
+    top: 82%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: .5s ease-in-out;
+} 
+.card:hover .description {
+    top: 60%;
+}
+.card .description p{
+    transition: .5s ease-in-out;
+    font-weight: 600;
+}
+.card .description > p:nth-child(1){
+    color: #e67e22;
+}
+.card .description > p:is(:nth-child(1),:nth-child(2)){
+    transform: translateY(40px);
+}
+.card:hover .description > p:nth-child(2){
+    font-size: 1.2rem;
+}
+.card .description p + p + :is(p,p + button){
+    opacity: 0;
+    margin: 0 1.1rem;
+    text-align: left; 
+    font-weight: normal;
+}
+.card:hover .description > p:is(:nth-child(1),:nth-child(2)){
+     padding-left: 50%;
+     transform: translateY(0);
+}
+.card:hover .description p + p + :is(p,p + button){
+    opacity: 1; 
+    padding: 1rem 0; 
+}
+ 
+.card .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 0;
+    width: 60%;
+    gap: 15px;
+    background-color:#e67e22;  
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+  }
+  
+.card .button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
