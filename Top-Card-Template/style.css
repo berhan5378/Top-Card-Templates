@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+span{ 
+    margin: 0 10px;
+    cursor: pointer;
+}
+span:hover{
+    color: var(--span);
+}
+.icon-container i ,.message-text-container p{
+    display: none;
+}
+:is(.icon-container i:nth-child(1),.message-text-container p:is(:nth-child(1),:nth-child(2))){
+    display: block;
+}
+span:hover ~ .card :is(.icon-container i ,.message-text-container p){
+    display: none;
+}  
+span:nth-child(1):hover ~ .card{  
+    --color:#fc0c0c48;
+    --i-color:#d10d0d;
+} 
+span:nth-child(1):hover ~ .card :is(.icon-container i:nth-child(4), .message-text-container p:is(:nth-child(3),:nth-child(4))){
+    display: block;
+}
+ 
+span:nth-child(2):hover ~ .card :is(.icon-container i:nth-child(1),.message-text-container p:is(:nth-child(1),:nth-child(2))){
+    display: block;
+}
+
+span:nth-child(3):hover ~ .card{  
+    --color:#4777ff48;
+    --i-color:#124fff;
+}
+span:nth-child(3):hover ~ .card :is(.icon-container i:nth-child(3), .message-text-container p:is(:nth-child(5),:nth-child(6))){
+    display: block;
+} 
+span:nth-child(4):hover ~ .card{  
+    --color:#ffa30d48;
+    --i-color:#db970e;
+}
+span:nth-child(4):hover ~ .card :is(.icon-container i:nth-child(2), .message-text-container p:is(:nth-child(7),:nth-child(8))){
+    display: block;
+} 
+.card {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    --color:#04e40048;
+    --i-color:#269b24;
+    width: 330px;
+    height: 80px;
+    border-radius: 8px;
+    border: 1px solid var(--color);
+    padding: 10px 15px;
+    background-color: #ffffff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+  }
+  .icon-container {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color);
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  .icon-container i { 
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    color: var(--i-color);
+  }
+  .message-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+  .message-text,
+  .sub-text {
+    margin: 0;
+    cursor: default;
+  }
+  .message-text {
+    color: var(--i-color);
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .sub-text {
+    font-size: 14px;
+    color: #555;
+  }
+  .cross-icon {
+    width: 18px;
+    height: 18px;
+    color: #555;
+    cursor: pointer;
+  }
+  @media (max-width: 400px) {
+   .card {
+    width: 90%;
+   }
+}
